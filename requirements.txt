@@ -1,0 +1,4 @@
+psutil
+GPUtil
+PyQt5
+pyinstaller

@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "system-monitor"
+version = "1.0.0"
+description = "시스템 리소스 모니터링 응용 프로그램"
+readme = "README.md"
+authors = [
+    {name = "System Monitor Developer", email = "reinhardt0926@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "psutil>=5.9.0",
+    "GPUtil>=1.4.0",
+    "PyQt5>=5.15.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=5.0.0",
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "isort>=5.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/reinhardt0926/system-monitor"
+
+[project.gui-scripts]
+system-monitor = "mnt_src.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "mnt_src"}
+packages = ["mnt_src"]
+
+[tool.setuptools.package-data]
+"mnt_src" = ["*.py"]
+"resources" = ["icons/*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
