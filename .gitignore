@@ -83,7 +83,6 @@ __pycache__/
 # pyinstaller build
 dist/
 build/
-*.spec
 
 # IDE
 .vscode/
